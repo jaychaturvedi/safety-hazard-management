@@ -47,6 +47,7 @@ class Home extends React.PureComponent<Props, State> {
           <View
             style={{
               marginVertical: 20,
+              height: 40
             }}>
             <SearchBar />
           </View>
@@ -114,11 +115,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5F6F7',
     padding: 20,
   },
-  // container: {
-  //   backgroundColor: '#F0F0F0',
-  //   width: '100%',
-  //   // paddingTop: 20
-  // },
   verticalDivider: {
     width: 1,
     height: '85%',

@@ -2,8 +2,15 @@ import React from 'react';
 import {Image, StyleSheet} from 'react-native';
 import {FooterTab, Icon} from 'native-base';
 import FooterItem from './footer-item';
-
-export type TFooterItem = 'home' | 'myAction' | 'raise' | 'more' | 'allIssues';
+import {Button, Text, View, TouchableOpacity} from 'react-native';
+import Raise from '../../screens/raise';
+export type TFooterItem =
+  | 'home'
+  | 'myAction'
+  | 'raiseHazard'
+  | 'more'
+  | 'allIssues'
+  | 'raiseIncident';
 
 const styles = StyleSheet.create({
   footerTab: {backgroundColor: 'white'},
@@ -16,7 +23,22 @@ type Props = {
   onItemSelect: (item: TFooterItem) => void;
 };
 
-export default class Tab extends React.PureComponent<Props, {}> {
+export default class Tab extends React.PureComponent<
+  Props,
+  {
+    isModalVisible: boolean;
+  }
+> {
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      isModalVisible: false,
+    };
+  }
+
+  toggleModal = (visible: boolean) => {
+    this.setState({isModalVisible: visible});
+  };
   render() {
     return (
       <FooterTab style={{...styles.footerTab}}>
@@ -54,20 +76,38 @@ export default class Tab extends React.PureComponent<Props, {}> {
             this.props.onItemSelect('myAction');
           }}
         />
-        <FooterItem
-          text={'Raise'}
-          icon={
+        <View
+          style={{
+            flex: 1,
+            alignItems: 'center',
+          }}>
+          <TouchableOpacity
+            style={{
+              backgroundColor: 'white',
+              elevation: 0,
+              flex: 1,
+              alignItems: 'center',
+            }}
+            onPress={() => {
+              this.toggleModal(true);
+            }}>
             <Image
               source={require('../../assets/icons/find_my_cycle.png')}
               style={
-                this.props.selectedItem === 'raise'
+                this.props.selectedItem === 'raiseHazard' ||
+                this.props.selectedItem === 'raiseIncident'
                   ? styles.iconSelected
                   : styles.icon
               }
             />
-          }
-          onPress={() => this.props.onItemSelect('raise')}
-        />
+            <Text>Raise</Text>
+            <Raise
+              onItemSelect={this.props.onItemSelect}
+              toggleModal={this.toggleModal}
+              isModalVisible={this.state.isModalVisible}
+            />
+          </TouchableOpacity>
+        </View>
         <FooterItem
           text={'All Issues'}
           icon={

@@ -6,7 +6,7 @@ export default function DropdownPicker(props) {
   const [ selectedLanguage, setSelectedLanguage ]=useState();
   return (
     <View style={{
-      backgroundColor:"white",
+      backgroundColor: "white",
       height: 40,
       justifyContent: "center",
       borderRadius: 4
@@ -19,8 +19,14 @@ export default function DropdownPicker(props) {
         onValueChange={(itemValue, itemIndex) =>
           setSelectedLanguage(itemValue)
         }>
-        <Picker.Item label="Plant A" value="Plant A" />
-        <Picker.Item label="Plant B" value="Olant B" />
+        {
+          props.items?.length ? props.items?.map((item, index) => {
+            return (
+              <Picker.Item label={item} value={item} />
+            )
+          }) : <Picker.Item label={"No option available"} value={"no option available"} />
+
+        }
       </Picker>
     </View>
   );

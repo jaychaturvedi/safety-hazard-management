@@ -11,10 +11,15 @@ interface Props {
 
 export default function FooterItem(props: Props) {
   return (
-    <View style={[styles.container, {backgroundColor: props.backgroundColor}]}>
+    <View
+      style={[
+        styles.container,
+        {backgroundColor: props.backgroundColor || '#8F8F8F0D'},
+      ]}>
       <Text
         style={{
           color: props.textColor || 'black',
+          textAlign: 'center',
         }}>
         {props.text}
       </Text>
@@ -26,8 +31,8 @@ const styles = StyleSheet.create({
   container: {
     height: 22,
     width: 82,
-    // padding:5,
     alignItems: 'center',
+    justifyContent: 'center',
     // paddingHorizontal: 10,
     // paddingVertical: 5,
   },

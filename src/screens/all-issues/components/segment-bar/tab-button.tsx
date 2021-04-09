@@ -28,6 +28,7 @@ export default function TabButton(props: any) {
         style={[
           {
             fontSize: 16,
+            fontWeight: props.number == props.selectedTab ? 'bold' : undefined,
           },
           {color: props.number == props.selectedTab ? '#fff' : 'black'},
         ]}>

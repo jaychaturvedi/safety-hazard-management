@@ -1,15 +1,7 @@
 import React, {Component, useState} from 'react';
 import {
   Container,
-  Header,
-  Left,
-  Body,
-  Right,
-  Button,
-  Icon,
-  Title,
   Segment,
-  Content,
 } from 'native-base';
 import {StyleSheet, View, Image, Text, RefreshControl, Dimensions} from 'react-native';
 import TabButton from './tab-button';
@@ -44,11 +36,10 @@ export default function SegmentBar(props: {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'blue',
     height: '100%',
   },
   tabsWrapper: {
-    backgroundColor: '#F0F0F0',
+    backgroundColor: '#F5F6F7',
     width: '100%',
     // paddingTop: 20
   },
