@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {InputGroup, Input, Icon, Text, View} from 'native-base';
 import { Image } from 'react-native';
-
+import SearchIcon from '../../../assets/svg/search-icon';
 export default class SearchBarExample extends Component {
   render() {
     return (
@@ -10,20 +10,22 @@ export default class SearchBarExample extends Component {
           backgroundColor: 'white',
           borderColor: '#D0D0DA',
           borderWidth: 1,
+          borderRadius: 8,
         }}>
-        <InputGroup>
+        <InputGroup
+          style={{
+            justifyContent: 'center',
+            height: '100%',
+          }}>
           <Input
             placeholder="search here"
+            placeholderTextColor="#D0D0DA"
             style={{
-              color: 'rgba(208, 208, 218, 1)',
               // opacity: 0.7,
               fontSize: 16,
             }}
           />
-          {/* <Icon name="ios-search" />
-           */}
-          <Image
-            source={require('../../../assets/svg/search-icon.png')}
+          <SearchIcon
             style={{
               marginRight: 10,
             }}

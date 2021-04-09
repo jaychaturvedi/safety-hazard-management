@@ -3,6 +3,7 @@ import {StyleSheet, View, Text} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Icon} from 'native-base';
 import FooterText from "./footer-text";
+
 interface Props {
   title: string;
   dueDate: string;
@@ -39,6 +40,9 @@ class RadiusCard extends React.PureComponent<Props, State> {
             justifyContent: 'space-between',
             marginVertical: 10,
             elevation: 3,
+            borderRadius: 8,
+            shadowOffset: {width: 0, height: 2},
+            shadowOpacity: 0.2,
           }}>
           <View
             style={{

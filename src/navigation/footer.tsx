@@ -11,8 +11,9 @@ import {
   View,
 } from 'native-base';
 import {TouchableOpacity} from 'react-native';
-import RaiseStack from './raise';
-import MenuSttack from './menu';
+import RaiseHazardStack from './raise-hazard';
+import RaiseIncidentStack from './raise-incident';
+import MenuStack from './menu';
 import RaiseScreen from '../screens/raise';
 import HomeStack from './home';
 import MyActionStack from './my-action';
@@ -52,17 +53,14 @@ export default class FooterNavigation extends React.PureComponent<
         return <HomeStack />;
       case 'myAction':
         return <MyActionStack />;
-      case 'raise':
-        return (
-          <RaiseScreen
-            toggleModal={this.toggleModal}
-            isModalVisible={this.state.isModalVisible}
-          />
-        );
+      case 'raiseHazard':
+        return <RaiseHazardStack />;
+      case 'raiseIncident':
+        return <RaiseIncidentStack />;
       case 'allIssues':
         return <AllIssuesStack />;
       case 'more':
-        return <MenuSttack />;
+        return <MenuStack />;
       default:
         return <HomeStack />;
     }
@@ -74,10 +72,8 @@ export default class FooterNavigation extends React.PureComponent<
         {!this.state.hideFooter && (
           <FooterNav
             onItemSelect={item => {
-              item !== 'raise'
-                ? this.toggleModal(true)
-                : this.toggleModal(true);
               this.setState({screen: item});
+              console.log('item pressed', item);
             }}
             selectedItem={this.state.screen}
           />

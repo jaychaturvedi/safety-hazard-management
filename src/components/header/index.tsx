@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     height: 18,
     marginRight: 18,
   },
-  title: {fontSize: 20, fontWeight: 'bold', color: 'black'},
+  title: {fontSize: 24, fontWeight: 'bold', color: 'black'},
   subtitle: {fontSize: 12, fontWeight: 'normal', color: 'black'},
   rightIcon: {width: 26, height: 26, position: 'relative'},
 });
