@@ -7,7 +7,7 @@ import {
   RefreshControl,
   TextInput,
 } from 'react-native';
-import {InputGroup, Input} from 'native-base';
+import {InputGroup, Input, Button} from 'native-base';
 import Header from '../../components/header';
 import RadiusCard from '../../components/radius-card';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
@@ -52,6 +52,7 @@ export default class RaiseHazard extends React.PureComponent<Props, State> {
               refreshing={this.state.refreshing}
               title="Loading..."
             />
+          
           }>
           <Text style={{fontSize: 24, fontWeight: '700'}}>Hazard Details</Text>
           <Text style={{fontSize: 16}}>Hazard name</Text>
@@ -94,6 +95,55 @@ export default class RaiseHazard extends React.PureComponent<Props, State> {
             // value={this.state.text}
             placeholder="Describe the issue here"
           />
+
+          <Text style={{fontSize:23,fontWeight:"400"}}>Facility Details</Text>
+          <Text>Facility</Text>
+          <DropDownPicker items={['North London']} />
+          <Text>Department</Text>
+          <DropDownPicker items={['Department B']}></DropDownPicker>
+          <Text>Location</Text>
+          <DropDownPicker items={['Area II']}></DropDownPicker>
+          <Text>Sub-Area (optional)</Text>
+          <InputBox
+            height={40}
+            marginHorizontal={20}
+            placeHolder="N/A"
+            
+          />
+          <Text>Machine ID (optional)</Text>     
+          <InputBox
+            height={40}
+            marginHorizontal={20}
+            placeHolder="N/A"
+          />
+          <Text style={{fontSize:23,fontWeight:"400"}}>Additional Details</Text>
+          <Text>Risk Probability</Text>
+          <InputBox
+            height={40}
+            marginHorizontal={20}
+            placeHolder="N/A"
+          />
+          <Text>Risk Severity</Text>
+          <InputBox
+            height={40}
+            marginHorizontal={20}
+            placeHolder="N/A"
+          />
+          <Text>Risk Level</Text>
+          <InputBox
+            disabled={true}
+            height={40}
+            marginHorizontal={20}
+            placeHolder="N/A"
+          />
+          <DropDownPicker items={['View Risk Level Map']}></DropDownPicker>
+          <Text>Owner</Text>
+          <DropDownPicker items={['Department Manager']}></DropDownPicker>
+          <TouchableOpacity>
+            <View style={{marginBottom:40,backgroundColor:'blue',width:'100%',marginLeft:'auto',marginRight:'auto',height:40,borderRadius:5,marginTop:10}}>
+         <Text style={{textAlign:'center',color:'white',fontSize:20,marginTop:6}}>Hello</Text>
+         </View>
+         </TouchableOpacity>
         </ScrollView>
       </View>
     );
@@ -102,6 +152,7 @@ export default class RaiseHazard extends React.PureComponent<Props, State> {
 
 const styles = StyleSheet.create({
   container: {
+    flex:1,
     backgroundColor: 'blue',
     height: '100%',
   },
