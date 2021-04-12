@@ -6,6 +6,7 @@ export default function InputComponent(props: {
   placeHolder: string;
   marginHorizontal: number;
   height: number;
+  disabled?:boolean;
 }) {
   return (
     <View
@@ -17,6 +18,7 @@ export default function InputComponent(props: {
         height: props.height,
       }}>
       <Input
+        disabled={props.disabled}
         placeholder={props.placeHolder}
         placeholderTextColor="#D0D0DA"
         style={{
