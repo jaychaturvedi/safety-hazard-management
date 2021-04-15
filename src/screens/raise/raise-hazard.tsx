@@ -95,41 +95,60 @@ export default class RaiseHazard extends React.PureComponent<Props, State> {
             // value={this.state.text}
             placeholder="Describe the issue here"
           />
-
+          <View style={{marginVertical:20}}>
           <Text style={{fontSize:23,fontWeight:"400"}}>Facility Details</Text>
+          </View>
+          <View style={{marginBottom:10}}>
           <Text>Facility</Text>
+          </View>
           <DropDownPicker items={['North London']} />
+          <View style={{marginVertical:10}}>
           <Text>Department</Text>
+          </View>
           <DropDownPicker items={['Department B']}></DropDownPicker>
+          <View style={{marginVertical:10}}>
           <Text>Location</Text>
+          </View>
           <DropDownPicker items={['Area II']}></DropDownPicker>
+          <View style={{marginVertical:10}}>
           <Text>Sub-Area (optional)</Text>
+          </View>
           <InputBox
             height={40}
             marginHorizontal={20}
             placeHolder="N/A"
             
           />
-          <Text>Machine ID (optional)</Text>     
+          <View style={{marginVertical:10}}>
+          <Text>Machine ID (optional)</Text>
+          </View>   
           <InputBox
             height={40}
             marginHorizontal={20}
             placeHolder="N/A"
           />
+          <View style={{marginVertical:20}}>
           <Text style={{fontSize:23,fontWeight:"400"}}>Additional Details</Text>
+          </View>
+          <View  style={{marginVertical:10}}>
           <Text>Risk Probability</Text>
+          </View>
           <InputBox
             height={40}
             marginHorizontal={20}
             placeHolder="N/A"
           />
+          <View style={{marginVertical:10}}>
           <Text>Risk Severity</Text>
+          </View>
           <InputBox
             height={40}
             marginHorizontal={20}
             placeHolder="N/A"
           />
+          <View style={{marginVertical:10}}>
           <Text>Risk Level</Text>
+          </View>
           <InputBox
             disabled={true}
             height={40}
@@ -137,7 +156,9 @@ export default class RaiseHazard extends React.PureComponent<Props, State> {
             placeHolder="N/A"
           />
           <DropDownPicker items={['View Risk Level Map']}></DropDownPicker>
+          <View style={{marginVertical:10}}>
           <Text>Owner</Text>
+          </View>
           <DropDownPicker items={['Department Manager']}></DropDownPicker>
           <TouchableOpacity>
             <View style={{marginBottom:40,backgroundColor:'blue',width:'100%',marginLeft:'auto',marginRight:'auto',height:40,borderRadius:5,marginTop:10}}>
